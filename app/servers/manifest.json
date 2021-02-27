@@ -1,0 +1,9 @@
+{
+    "khaki": {
+        "entrypoint": "/servers/khaki/server.js"
+    },
+    "logan": {
+        "entrypoint": "/servers/logan/server.js",
+        "domain": "logan"
+    }
+}

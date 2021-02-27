@@ -1,0 +1,23 @@
+{{#> layout}}
+    {{#content "head" mode="append"}}
+        <title>{{titlecase env.NAME}} - chance</title>
+    {{/content}}
+    
+    {{#content "body"}}
+        {{#if wrecked}}
+            Your ship crashed!! :-(
+        {{else}}
+<pre>
+              |    |    |
+             )_)  )_)  )_)
+            )___))___))___)\
+           )____)____)_____)\\
+         _____|____|____|____\\\__
+---------\                   /--------- 
+  ^^^^^ ^^^^^^^^^^^^^^^^^^^^^
+    ^^^^      ^^^^     ^^^    ^^
+         ^^^^      ^^^
+</pre>
+        {{/if}}
+    {{/content}}
+{{/layout}}

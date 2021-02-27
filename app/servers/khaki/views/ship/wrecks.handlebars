@@ -1,0 +1,9 @@
+{{#> layout}}
+    {{#content "head" mode="append"}}
+        <title>{{titlecase env.NAME}} - wrecks</title>
+    {{/content}}
+
+    {{#content "body"}}
+        As of {{ date }}, there have currently been {{ wrecks }} on the sea so far.
+    {{/content}}
+{{/layout}}

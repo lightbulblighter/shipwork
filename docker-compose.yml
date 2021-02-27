@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  server:
+    container_name: "shipwork_server"
+    build:
+      context: "."
+      dockerfile: "./Dockerfile"
+      args:
+        SERVER_PORT: ${SERVER_PORT}
+    env_file:
+      - "./.env"
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"
+  database:
+    container_name: "shipwork_database"
+    image: "mysql"
+    hostname: "database"
+    command: "--init-file /usr/local/bin/structure.sql"
+    environment:
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./app/shipwork.sql:/usr/local/bin/structure.sql"
+    cap_add:
+      - "SYS_NICE"

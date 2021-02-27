@@ -1,0 +1,14 @@
+{{#> layout}}
+    {{#content "head" mode="append"}}
+        <title>{{titlecase env.NAME}}</title>
+    {{/content}}
+
+    {{#content "body"}}
+        <h1>Welcome to {{titlecase env.NAME}}</h1>
+        Your IP is {{ ip }}
+        <ul>
+            <li><a href="/ship/wrecks">Shipwrecks</a></li>
+            <li><a href="/ship/chance">Take a chance</a></li>
+        </ul>
+    {{/content}}
+{{/layout}}
